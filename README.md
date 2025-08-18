@@ -66,6 +66,7 @@ python manage.py createsuperuser
 برای این بخش یک فایل `requests.ipynb` نوشتیم که صرفا درخواست ها را با استفاده از کتابخانه `requests` ارسال می‌کند و خروجی را ذخیره و چاپ می‌کند.
 ===== نتایج =====
 </div>
+<div>
 ```
 create_user
 Request:
@@ -173,6 +174,7 @@ Response:
 }
 --------------------------------------------------
 ```
+</div>
 
 
 # Notes project
