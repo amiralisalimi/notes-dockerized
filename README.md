@@ -61,6 +61,117 @@ python manage.py createsuperuser
 ### **settings.py**
 - به‌روزرسانی شده تا اطلاعات دیتابیس را از **متغیرهای محیطی** بخواند و دیگر به‌صورت ثابت نباشد.
 
+
+## ارسال درخواست‌ها به وب سرور
+برای این بخش یک فایل `requests.ipynb` نوشتیم که صرفا درخواست ها را با استفاده از کتابخانه `requests` ارسال می‌کند و خروجی را ذخیره و چاپ می‌کند.
+===== نتایج =====
+```
+create_user
+Request:
+{
+  "method": "POST",
+  "url": "http://localhost:8000/users/create/",
+  "payload": {
+    "username": "user1",
+    "password": "1234"
+  }
+}
+Response:
+{
+  "status": 200,
+  "body": {
+    "id": 2,
+    "username": "user1"
+  }
+}
+--------------------------------------------------
+login
+Request:
+{
+  "method": "POST",
+  "url": "http://localhost:8000/users/login/",
+  "payload": {
+    "username": "user1",
+    "password": "1234"
+  }
+}
+Response:
+{
+  "status": 200,
+  "body": {
+    "message": "Login successful"
+  }
+}
+--------------------------------------------------
+create_note_1
+Request:
+{
+  "method": "POST",
+  "url": "http://localhost:8000/notes/create/",
+  "payload": {
+    "title": "title1",
+    "body": "body1"
+  }
+}
+Response:
+{
+  "status": 200,
+  "body": {
+    "id": 1,
+    "title": "title1",
+    "body": "body1",
+    "create_time": "2025-08-18T11:34:55.316Z"
+  }
+}
+--------------------------------------------------
+create_note_2
+Request:
+{
+  "method": "POST",
+  "url": "http://localhost:8000/notes/create/",
+  "payload": {
+    "title": "title2",
+    "body": "body2"
+  }
+}
+Response:
+{
+  "status": 200,
+  "body": {
+    "id": 2,
+    "title": "title2",
+    "body": "body2",
+    "create_time": "2025-08-18T11:34:55.375Z"
+  }
+}
+--------------------------------------------------
+list_notes
+Request:
+{
+  "method": "GET",
+  "url": "http://localhost:8000/notes/",
+  "payload": null
+}
+Response:
+{
+  "status": 200,
+  "body": [
+    {
+      "id": 1,
+      "title": "title1",
+      "body": "body1",
+      "create_time": "2025-08-18T11:34:55.316Z"
+    },
+    {
+      "id": 2,
+      "title": "title2",
+      "body": "body2",
+      "create_time": "2025-08-18T11:34:55.375Z"
+    }
+  ]
+}
+--------------------------------------------------
+```
 </div>
 
 
