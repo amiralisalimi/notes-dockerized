@@ -229,3 +229,17 @@ notes/<id>/ --> get details of a note
 notes/create/ --> create a note
 notes/<id>/delete/ --> delete a note
 ```
+# تعامل با داکر
+## نمایش image ها
+
+با استفاده از دستور docker images می‌توان لیستی از image ها را دید. در این image ها notes-dockerized-web و postgres با ورژن 15 مربوط به این آزمایش هستند. در ادامه عکس خروجی این دستور را میبینید:
+
+![img_1.png](img_1.png)
+
+همچنین می‌توان با استفاده از دستور docker ps لیست کانتینر ها را مشاهده کرد:
+
+![img_2.png](img_2.png)
+
+برای اجرا کردن دستور دلخواه در کانتینر، وارد کانتینر notes-dockerized-web شدیم و دستور ls را زدیم. خروجی مطابق عکس زیر است:
+
+![img.png](img.png)
